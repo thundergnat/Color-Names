@@ -1,5 +1,7 @@
 use Test;
 
+plan 3;
+
 use Color::Names:api<2>;
 use Color::Names::CSS3;
 my $aqua = Color::Names.color-data(<CSS3>).&find-color: <Aqua>;
@@ -14,3 +16,4 @@ my @red = sort Color::Names.color-data(<RAL-DSP>).&find-color(<Red>)».value.»<
 is +@red, 143, "Found appropriate number of colors";
 is( @red.map( {.contains: 'red', :i} ).all.so, True, 'And they all contain the search string');
 
+done-testing;
