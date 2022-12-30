@@ -9,28 +9,34 @@ This is an extension of the original [Color::Names](https://github.com/holli-hol
 
 It is excellent, but insufficient for my purposes. This module has the same basic functionality but an extended API (:api<2>) and expanded color lists.
 
+The major difference is the data structure for the color database. The original (:api<1>) used the color name as its hash key. Worked, bit only allowed loading one set of color values at a time to prevent collisions.
+
+This module (:api<2) uses a scheme to allow any number of color hashes to be loaded at the same time.
+
+Each color set is stored in a hash with the color name concatonated with the set ID as its key, with the value containing information the color name, its RGB values in an array, and in some cases, a color 'code', an identifying code for that color.
+
 SYNOPSIS
 ========
 
 ```raku
 use Color::Names:api<2>;
 
-# a hash of normalized color names associated
-# with rgb values and a pretty name
+# a hash of normalized color names / set ID
+# with rgb values, a pretty name, and possibly color codes
 
-say Color.Names.color-data("X11");
+.say for sort Color::Names.color-data("X11");
 
 
 # you can mix sets, names are associated with the group
 # they came from
 
-say Color.Names.color-data("X11", "XKCD");
+.say for sort Color::Names.color-data("X11", "XKCD");
 
 
 # There is a find-color routine exported you can use to search for partial
 # or exact names.
 
-use Color::Data::CSS3;
+use Color::Names::CSS3;
 .say for sort Color::Names.color-data(<CSS3>).&find-color: <Aqua>;
 # --> aqua-CSS3             => { rgb => [0 255 255], name => Aqua}
 # --> aquamarine-CSS3       => { rgb => [127 255 212], name => Aquamarine}
