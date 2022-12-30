@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/thundergnat/Color-Names/actions/workflows/test.yml/badge.svg)](https://github.com/thundergnat/Color-Names/actions)
+
 NAME
 ====
 

@@ -14,7 +14,19 @@
   "name": "Color::Names",
   "perl": "6.*",
   "provides": {
-    "Color::Names": "lib/Color/Names.rakumod"
+    "Color::Names": "lib/Color/Names.rakumod",
+    "Color::Names::CSS3": "lib/Color/Names/CSS3.rakumod",
+    "Color::Names::Crayola": "lib/Color/Names/Crayola.rakumod",
+    "Color::Names::FS595B": "lib/Color/Names/FS595B.rakumod",
+    "Color::Names::FS595C": "lib/Color/Names/FS595C.rakumod",
+    "Color::Names::NBS": "lib/Color/Names/NBS.rakumod",
+    "Color::Names::NCS": "lib/Color/Names/NCS.rakumod",
+    "Color::Names::RAL-CL": "lib/Color/Names/RAL-CL.rakumod",
+    "Color::Names::RAL-DSP": "lib/Color/Names/RAL-DSP.rakumod",
+    "Color::Names::Resene": "lib/Color/Names/Resene.rakumod",
+    "Color::Names::X11": "lib/Color/Names/X11.rakumod",
+    "Color::Names::X11-Grey": "lib/Color/Names/X11-Grey.rakumod",
+    "Color::Names::XKCD": "lib/Color/Names/XKCD.rakumod"
   },
   "resources": [
   ],
