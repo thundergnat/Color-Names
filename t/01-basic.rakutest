@@ -1,0 +1,84 @@
+use Test;
+
+plan 25;
+
+lives-ok {
+  use Color::Names:api<2>;
+}, "Base Color::Names module loads";
+
+for <X11 XKCD CSS3 X11-Grey NCS NBS Crayola Resene RAL-CL RAL-DSP FS595B FS595C> {}
+
+lives-ok {
+  use Color::Names::X11 :colors;
+  my $colors = Color::Names::X11.color-data;
+  is-deeply $colors, COLORS, "X11 color-data is sane";
+}, "X11 loads ok";
+
+lives-ok {
+  use Color::Names::XKCD :colors;
+  my $colors = Color::Names::XKCD.color-data;
+  is-deeply $colors, COLORS, "XKCD color-data is sane";
+}, "XKCD loads ok";
+
+lives-ok {
+  use Color::Names::CSS3 :colors;
+    my $colors = Color::Names::CSS3.color-data;
+    is-deeply $colors, COLORS, "CSS color-data is sane";
+}, "CSS3 loads ok";
+
+lives-ok {
+  use Color::Names::X11-Grey :colors;
+    my $colors = Color::Names::X11-Grey.color-data;
+    is-deeply $colors, COLORS, "X11-Grey color-data is sane";
+}, "X11-Grey loads ok";
+
+lives-ok {
+  use Color::Names::NCS :colors;
+    my $colors = Color::Names::NCS.color-data;
+    is-deeply $colors, COLORS, "NCS color-data is sane";
+}, "NCS loads ok";
+
+lives-ok {
+  use Color::Names::NBS :colors;
+    my $colors = Color::Names::NBS.color-data;
+    is-deeply $colors, COLORS, "NBS color-data is sane";
+}, "NBS loads ok";
+
+lives-ok {
+  use Color::Names::Crayola :colors;
+    my $colors = Color::Names::Crayola.color-data;
+    is-deeply $colors, COLORS, "Crayola color-data is sane";
+}, "Crayola loads ok";
+
+lives-ok {
+  use Color::Names::Resene :colors;
+    my $colors = Color::Names::Resene.color-data;
+    is-deeply $colors, COLORS, "Resene color-data is sane";
+}, "Resene loads ok";
+
+lives-ok {
+  use Color::Names::RAL-CL :colors;
+    my $colors = Color::Names::RAL-CL.color-data;
+    is-deeply $colors, COLORS, "RAL-CL color-data is sane";
+}, "RAL-CL loads ok";
+
+lives-ok {
+  use Color::Names::RAL-DSP :colors;
+    my $colors = Color::Names::RAL-DSP.color-data;
+    is-deeply $colors, COLORS, "RAL-DSP color-data is sane";
+}, "RAL-DSP loads ok";
+
+lives-ok {
+  use Color::Names::FS595B :colors;
+    my $colors = Color::Names::FS595B.color-data;
+    is-deeply $colors, COLORS, "FS595B color-data is sane";
+}, "FS595B loads ok";
+
+
+lives-ok {
+  use Color::Names::FS595C :colors;
+    my $colors = Color::Names::FS595C.color-data;
+    is-deeply $colors, COLORS, "FS595C color-data is sane";
+}, "FS595C loads ok";
+
+done-testing;

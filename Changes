@@ -1,0 +1,6 @@
+Revision history for Color-Names
+
+{{$NEXT}}
+    - Extend API (:api<2>)
+    - Add find-color() and nearest-color() routines
+    - expand color list

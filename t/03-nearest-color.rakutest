@@ -1,0 +1,15 @@
+use Test;
+use Color::Names:api<2>;
+
+plan 6;
+
+my %c = Color::Names.color-data(<XKCD>);
+for ([152,215,150], 'Hospital Green', [155,229,170],
+     [89,177,250], 'Sky Blue', [117,187,253],
+     [123,37,105], 'Darkish Purple', [117,25,115]
+) -> @rgb, $name, @nearest {
+  is nearest(%c, |@rgb)[0].value.<name>, $name, "Nearest name $name is sane";
+  is nearest(%c, |@rgb)[0].value.<rgb>, @nearest, "Nearest rgb for $name is sane";
+}
+
+done-testing;

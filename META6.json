@@ -1,0 +1,43 @@
+{
+  "api": 2,
+  "auth": "zef:thundergnat",
+  "authors": [
+    "Markus 'holli' Holzer",
+    "Stephen Schulze (thundergnat)"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "A fairly comprehensive collection of lists of named colors.",
+  "license": "BSD-2-Clause",
+  "name": "Color::Names",
+  "perl": "6.*",
+  "provides": {
+    "Color::Names": "lib/Color/Names.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "git://github.com/thundergnat/Color-Names.git",
+  "tags": [
+    "CSS3",
+    "CSS",
+    "XKCD",
+    "X11",
+    "X11-Grey",
+    "Crayola",
+    "Resene",
+    "NCS",
+    "NBS",
+    "RAL-CL",
+    "RAL-DSP",
+    "FS595B",
+    "FS595C",
+    "Color",
+    "Colour",
+    "Names"
+  ],
+  "test-depends": [
+  ],
+  "version": "2.0.0"
+}

@@ -1,0 +1,16 @@
+use Test;
+
+use Color::Names:api<2>;
+use Color::Names::CSS3;
+my $aqua = Color::Names.color-data(<CSS3>).&find-color: <Aqua>;
+
+is-deeply $aqua.sort, (
+  aqua-CSS3             => {name => 'Aqua',              rgb => [  0, 255, 255]},
+  aquamarine-CSS3       => {name => 'Aquamarine',        rgb => [127, 255, 212]},
+  mediumaquamarine-CSS3 => {name => 'Medium Aquamarine', rgb => [102, 205, 170]}
+), "find-color is sane";
+
+my @red = sort Color::Names.color-data(<RAL-DSP>).&find-color(<Red>)».value.»<name>;
+is +@red, 143, "Found appropriate number of colors";
+is( @red.map( {.contains: 'red', :i} ).all.so, True, 'And they all contain the search string');
+
